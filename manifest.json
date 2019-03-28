@@ -1,0 +1,42 @@
+{
+	"name": "spreadsheet-importer",
+	"label": "Spreadsheet Importer",
+	"description": "This gear takes a spreadsheet and appends it to the container metadata",
+	"version": "0",
+	"inputs": {
+		"api-key": {
+			"base": "api-key"
+		},
+		"spreadsheet-file": {
+			"base": "file",
+			"description": "A spreadsheet to be appended to the metadata",
+			"type": {
+				"enum": [
+					"tabular data"
+				]
+			}
+		}
+	},
+	"config": {},
+	"environment": {
+		"GPG_KEY": "0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D",
+		"LANG": "C.UTF-8",
+		"PATH": "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+		"PYTHON_PIP_VERSION": "19.0.3",
+		"PYTHON_VERSION": "3.7.2"
+	},
+	"command": "./spreadsheet_importer.py",
+	"author": "Kaleb Fischer",
+	"maintainer": "Kaleb Fischer",
+	"cite": "List citations here.",
+	"license": "Other",
+	"source": "",
+	"url": "",
+	"custom": {
+		"gear-builder": {
+			"category": "converter",
+			"container": "beec8af7f724c5021c531ea0b596ce452e865f64aed86c6c9f1e1992e8b599fe",
+			"image": "gear-builder-watsgxkjzd-20190325104238"
+		}
+	}
+}
