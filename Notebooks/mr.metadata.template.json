@@ -1,0 +1,332 @@
+{
+  "Modality": {
+    "type": "string",
+    "regex": "/MR/",
+    "required": true,
+    "description": "Modality must match 'MR'"
+  },
+  "MagneticFieldStrength": {
+    "type": "number",
+    "regex": "/^\d{0,2}(\.\d{1})?$/",
+    "required": true,
+    "description": "MagneticFieldStrength must match /^\d{0,2}(\.\d{1})?$/. Example: 3, 3.0 or 11.7"
+  },
+  "ImagingFrequency": {
+    "type": "number",
+    "description": "ImagingFrequency is an optinal field. If proivded it must be a number. Example. 123.262"
+  },
+  "Manufacturer": {
+    "type": "string",
+    "description": "Manufacturer is an optinal field. Example. Siemens"
+  },
+    "ManufacturersModelName": {
+    "type": "string",
+    "description": "ManufacturersModelName is an optinal field. Example. Prisma_fit"
+  },
+    "InstitutionName": {
+    "type": "string",
+    "description": "InstitutionName is an optinal field. Example. Stanford University"
+  },
+    "InstitutionalDepartmentName": {
+    "type": "string",
+    "description": "InstitutionalDepartmentName is an optinal field. Example. Psychiatary"
+  },
+    "InstitutionAddress": {
+    "type": "string",
+    "description": "InstitutionAddress is an optinal field. Example. 1234 Main St. City, CA 12345"
+  },
+   "DeviceSerialNumber": {
+    "type": "string",
+    "description": "DeviceSerialNumber is an optinal field. Example. 123456789"
+  },
+    "StationName": {
+    "type": "string",
+    "description": "StationName is an optinal field. Example. MRC35414"
+  },
+    "SeriesInstanceUID": {
+    "type": "string",
+    "regex": "/^\d{1}\.\d{1}(\.\d{1,55})?$/",
+    "required": true,
+    "description": "SeriesInstanceUID must match above regex. Example. 1.3.12.2.1107.5.2.43.167004.2019030318311045850440175.0.0.0"
+  },
+    "StudyInstanceUID": {
+    "type": "string",
+    "regex": "/^\d{1}\.\d{1}(\.\d{1,55})?$/",
+    "required": true,
+    "description": "StudyInstanceUID is an optinal field. Example. 1.3.12.2.1107.5.2.43.167004.30000019022812230075700000061"
+  },
+    "ReferringPhysicianName": {
+    "type": "string",
+    "description": "ReferringPhysicianName is an optinal field. Example. Dr. Smith"
+  },
+    "StudyID": {
+    "type": "number",
+    "regex": "/^\d{1,}/",
+    "required": true,
+    "description": "StudyID must match /^[0-9]{1+}/. Example. 1"
+  },
+    "PatientName": {
+    "type": "string",
+    "description": "PatientName is an optinal field. Example. John Doe"
+  },
+    "PatientID": {
+    "type": "string",
+    "regex": "/^[A-Za-z0-9]{1+}/",
+    "required": true,
+    "description": "PatientID must match ^[A-Za-z0-9]{1+}/. Example. S001"
+  },
+    "PatientSex": {
+    "type": "string",
+    "description": "PatientSex is an optinal field. Example. Male"
+  },
+    "PatientWeight": {
+    "type": "string",
+    "description": "PatientWeight is an optinal field. Example. 80"
+  },
+    "BodyPartExamined": {
+    "type": "string",
+    "regex": "/^[A-Za-z]{1,}/",
+    "required": true,
+    "description": "BodyPartExamined must match /^[A-Za-z]{1+}/. Example. BRAIN"
+  },
+    "PatientPosition": {
+    "type": "string",
+    "description": "PatientPosition is an optinal field. Example. HFS"
+  },
+    "ProcedureStepDescription": {
+    "type": "string",
+    "description": "ProcedureStepDescription is an optinal field. Example. CRANEO_FUNCIONAL"
+  },
+    "SoftwareVersions": {
+    "type": "string",
+    "description": "SoftwareVersions is an optinal field. Example. Syngo_MR_E11"
+  },
+    "MRAcquisitionType": {
+    "type": "string",
+    "regex": "/[A-Za-z0-9-_.,!"'/$]*/",
+    "required": true,
+    "description": "MRAcquisitionType could be any string, /[A-Za-z0-9-_.,!"'/$]*/". Example. 2D, 3D_GRASE"
+  },
+    "SeriesDescription": {
+    "type": "string",
+    "regex": "/^[A-Za-z_\-0-9]{1,}",
+    "required": true,
+    "description": "SeriesDescription must match /^[A-Za-z]{1+}/. Example. RetinotopicAtlas_Run1, fmri-head"
+  },
+    "ProtocolName": {
+    "type": "string",
+    "description": "ProtocolName is an optinal field. Example. RetinotopicAtlas_Run1"
+  },
+    "ScanningSequence": {
+    "type": "string",
+    "regex": "/[A-Za-z0-9-_.,!"'/$]*/",
+    "required": true,
+    "description": "ScanningSequence is required and can be any string. Example. EPI"
+  },
+    "SequenceVariant": {
+    "type": "string",
+    "description": "SequenceVariant is an optinal field. Example. SK_SS"
+  },
+    "ScanOptions": {
+    "type": "string",
+    "description": "ScanOptions is an optinal field. Example. PFP_FS"
+  },
+    "SequenceName": {
+    "type": "string",
+    "description": "SequenceName is an optinal field. Example. epfid2d1_96"
+  },
+    "ImageType": {
+    "type": "string",
+    "description": "ImageType is an optinal field. Example. Mosaic"
+  },
+    "SeriesNumber": {
+    "type": "string",
+    "description": "SeriesNumber is an optinal field. Example. 62"
+  },
+    "AcquisitionTime": {
+    "type": "string",
+    "description": "AcquisitionTime is an optinal field. Example. 18:31:21"
+  },
+    "AcquisitionDateTime": {
+    "type": "string",
+    "description": "AcquisitionDateTime is an optinal field. Example. 3/3/2019  6:31:21 PM"
+  },
+    "AcquisitionNumber": {
+    "type": "string",
+    "description": "AcquisitionNumber is an optinal field. Example. 1"
+  },
+    "ImageComments": {
+    "type": "string",
+    "description": "ImageComments is an optinal field. Example. Unaliased_MB3_PE3_LB_SENSE1"
+  },
+    "SliceThickness": {
+    "type": "number",
+    "regex": "/^\d{0,2}(\.\d{1,})?$/",
+    "required": true,
+    "description": "SliceThickness must match /^\d{0,2}(\.\d{1,})?$/. Example: 2 or 2.5433"
+  },
+    "SpacingBetweenSlices": {
+    "type": "string",
+    "description": "SpacingBetweenSlices is an optinal field. Example. 1"
+  },
+    "SAR": {
+    "type": "string",
+    "description": "SAR is an optinal field. Example. 0.0593594"
+  },
+    "EchoTime": {
+    "type": "number",
+    "regex": "/^\d{0,4}(\.\d{1,})?$/",
+    "required": true,
+    "description": "InversionTime must match /^\d{0,4}(\.\d{1,})?$/. Example: 75 or 34.2"
+  },
+    "RepetitionTime": {
+    "type": "number",
+    "regex": "/^\d{0,4}(\.\d{1,})?$/",
+    "required": true,
+    "description": "RepetitionTime must match /^\d{0,4}(\.\d{1,})?$/. Example: 4 or 4.2"
+  },
+    "FlipAngle": {
+    "type": "string",
+    "description": "FlipAngle is an optinal field. Example. 75"
+  },
+    "PartialFourier": {
+    "type": "string",
+    "description": "PartialFourier is an optinal field. Example. 0.875"
+  },
+    "BaseResolution": {
+    "type": "string",
+    "description": "BaseResolution is an optinal field. Example. 96"
+  },
+    "ShimSetting": {
+    "type": "string",
+    "description": "ShimSetting is an optinal field. Example. 76,-11164,-7059,545,24,-195,-86,15"
+  },
+    "TxRefAmp": {
+    "type": "string",
+    "description": "TxRefAmp is an optinal field. Example. 246.591"
+  },
+    "PhaseResolution": {
+    "type": "string",
+    "description": "PhaseResolution is an optinal field. Example. 1"
+  },
+    "ReceiveCoilName": {
+    "type": "string",
+    "description": "ReceiveCoilName is an optinal field. Example. HeadNeck_64"
+  },
+    "ReceiveCoilActiveElements": {
+    "type": "string",
+    "description": "ReceiveCoilActiveElements is an optinal field. Example. HC1-7;NC1,2"
+  },
+    "CoilString": {
+    "type": "string",
+    "description": "CoilString is an optinal field. Example. HC1-7;NC1_2"
+  },
+    "PulseSequenceDetails": {
+    "type": "string",
+    "description": "PulseSequenceDetails is an optinal field. Example. mbep2d_bold"
+  },
+    "WipMemBlock": {
+    "type": "string",
+    "description": "WipMemBlock is an optinal field. Example. 2b0a4368-108d-4a1e-8404-12d445946a00"
+  },
+    "ConsistencyInfo": {
+    "type": "string",
+    "description": "ConsistencyInfo is an optinal field. Example. N4_VE11C_LATEST_20160120"
+  },
+    "MultibandAccelerationFactor": {
+    "type": "string",
+    "description": "MultibandAccelerationFactor is an optinal field. Example. 3"
+  },
+    "PercentPhaseFOV": {
+    "type": "string",
+    "description": "PercentPhaseFOV is an optinal field. Example. 100"
+  },
+    "EchoTrainLength": {
+    "type": "string",
+    "description": "EchoTrainLength is an optinal field. Example. 84"
+  },
+    "PhaseEncodingSteps": {
+    "type": "string",
+    "description": "PhaseEncodingSteps is an optinal field. Example. 84"
+  },
+    "AcquisitionMatrixPE": {
+    "type": "string",
+    "description": "AcquisitionMatrixPE is an optinal field. Example. 96"
+  },
+    "ReconMatrixPE": {
+    "type": "string",
+    "description": "ReconMatrixPE is an optinal field. Example. 96"
+  },
+    "BandwidthPerPixelPhaseEncode": {
+    "type": "string",
+    "description": "BandwidthPerPixelPhaseEncode is an optinal field. Example. 17.96"
+  },
+    "EffectiveEchoSpacing": {
+    "type": "string",
+    "description": "EffectiveEchoSpacing is an optinal field. Example. 0.000579993"
+  },
+    "DerivedVendorReportedEchoSpacing": {
+    "type": "string",
+    "description": "DerivedVendorReportedEchoSpacing is an optinal field. Example. 0.000579993"
+  },
+    "TotalReadoutTime": {
+    "type": "string",
+    "description": "TotalReadoutTime is an optinal field. Example. 0.0550993"
+  },
+    "PixelBandwidth": {
+    "type": "string",
+    "description": "PixelBandwidth is an optinal field. Example. 2365"
+  },
+    "DwellTime": {
+    "type": "string",
+    "description": "DwellTime is an optinal field. Example. 0.0000022"
+  },
+    "PhaseEncodingDirection": {
+    "type": "string",
+    "description": "PhaseEncodingDirection is an optinal field. Example. j-"
+  },
+    "SliceTiming": {
+    "type": "string",
+    "description": "SliceTiming is an optinal field. Example. 0,0.825,1.65,1.5,0.525"
+  },
+    "ImageOrientationPatientDICOM": {
+    "type": "string",
+    "description": "ImageOrientationPatientDICOM is an optinal field. Example. 0.999369,-0.0247382,-0.0254766"
+  },
+    "InPlanePhaseEncodingDirectionDICOM": {
+    "type": "string",
+    "description": "InPlanePhaseEncodingDirectionDICOM is an optinal field. Example. COL"
+  },
+    "ConversionSoftware": {
+    "type": "string",
+    "description": "ConversionSoftware is an optinal field. Example. dcm2niix"
+  },
+    "ConversionSoftwareVersion": {
+    "type": "string",
+    "description": "ConversionSoftwareVersion is an optinal field. Example. v1.0.20181114  (JP2:OpenJPEG) GCC4.8.4"
+  },
+    "ClinicalTrialTimePointID": {
+    "type": "string",
+    "regex": "/^\d{1,}(\.\d{1,})+?$/",
+    "required": true,
+    "description": "ClinicalTrialTimePointID is an optinal field. Example. 11.1.2014"
+  },
+    "ClinicalTrialTimePointDescription": {
+    "type": "string",
+    "regex": "/[A-Za-z0-9-_.,!"'/$]*/",
+    "required": true,
+    "description": "ClinicalTrialTimePointDescription is required and can be any string. Example. This is clinical trial is for drug Rx"
+  },
+  "PixelSpacing": {
+    "type": "number",
+    "regex": "/^\d{0,2}(\.\d{1,})?$/",
+    "required": true,
+    "description": "PixelSpacing must match /^\d{0,2}(\.\d{1,})?$/. Example: 2 or 2.5433"
+  },
+  "InversionTime": {
+    "type": "number",
+    "regex": "/^\d{0,4}(\.\d{1,})?$/",
+    "required": true,
+    "description": "InversionTime must match /^\d{0,4}(\.\d{1,})?$/. Example: 2 or 2.5433"
+  }
+}
