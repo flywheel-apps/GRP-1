@@ -1,13 +1,13 @@
 {
   "Modality": {
     "type": "string",
-    "regex": "/MR/",
+    "pattern": "/MR/",
     "required": true,
     "description": "Modality must match 'MR'"
   },
   "MagneticFieldStrength": {
     "type": "number",
-    "regex": "/^\\d{0,2}(\\.\\d{1})?$/",
+    "pattern": "/^\\d{0,2}(\\.\\d{1})?$/",
     "required": true,
     "description": "MagneticFieldStrength must match /^\\d{0,2}(\\.\\d{1})?$/. Example: 3, 3.0 or 11.7"
   },
@@ -45,13 +45,13 @@
   },
     "SeriesInstanceUID": {
     "type": "string",
-    "regex": "/^\\d{1}\\.\\d{1}(\\.\\d{1,55})?$/",
+    "pattern": "/^\\d{1}\\.\\d{1}(\\.\\d{1,55})?$/",
     "required": true,
-    "description": "SeriesInstanceUID must match above regex. Example. 1.3.12.2.1107.5.2.43.167004.2019030318311045850440175.0.0.0"
+    "description": "SeriesInstanceUID must match above pattern. Example. 1.3.12.2.1107.5.2.43.167004.2019030318311045850440175.0.0.0"
   },
     "StudyInstanceUID": {
     "type": "string",
-    "regex": "/^\\d{1}\\.\\d{1}(\\.\\d{1,55})?$/",
+    "pattern": "/^\\d{1}\\.\\d{1}(\\.\\d{1,55})?$/",
     "required": true,
     "description": "StudyInstanceUID is an optional field. Example. 1.3.12.2.1107.5.2.43.167004.30000019022812230075700000061"
   },
@@ -61,7 +61,7 @@
   },
     "StudyID": {
     "type": "number",
-    "regex": "/^\\d{1,}/",
+    "pattern": "/^\\d{1,}/",
     "required": true,
     "description": "StudyID must match /^[0-9]{1+}/. Example. 1"
   },
@@ -71,7 +71,7 @@
   },
     "PatientID": {
     "type": "string",
-    "regex": "/^[A-Za-z0-9]{1+}/",
+    "pattern": "/^[A-Za-z0-9]{1+}/",
     "required": true,
     "description": "PatientID must match ^[A-Za-z0-9]{1+}/. Example. S001"
   },
@@ -85,7 +85,7 @@
   },
     "BodyPartExamined": {
     "type": "string",
-    "regex": "/^[A-Za-z]{1,}/",
+    "pattern": "/^[A-Za-z]{1,}/",
     "required": true,
     "description": "BodyPartExamined must match /^[A-Za-z]{1+}/. Example. BRAIN"
   },
@@ -103,13 +103,13 @@
   },
     "MRAcquisitionType": {
     "type": "string",
-    "regex": "/[A-Za-z0-9-_.,!\"'/$]*/",
+    "pattern": "/[A-Za-z0-9-_.,!\"'/$]*/",
     "required": true,
     "description": "MRAcquisitionType could be any string, /[A-Za-z0-9-_.,!\"'/$]*/\". Example. 2D, 3D_GRASE"
   },
     "SeriesDescription": {
     "type": "string",
-    "regex": "/^[A-Za-z_\\-0-9]{1,}",
+    "pattern": "/^[A-Za-z_\\-0-9]{1,}",
     "required": true,
     "description": "SeriesDescription must match /^[A-Za-z]{1+}/. Example. RetinotopicAtlas_Run1, fmri-head"
   },
@@ -119,7 +119,7 @@
   },
     "ScanningSequence": {
     "type": "string",
-    "regex": "/[A-Za-z0-9-_.,!\"'/$]*/",
+    "pattern": "/[A-Za-z0-9-_.,!\"'/$]*/",
     "required": true,
     "description": "ScanningSequence is required and can be any string. Example. EPI"
   },
@@ -161,7 +161,7 @@
   },
     "SliceThickness": {
     "type": "number",
-    "regex": "/^\\d{0,2}(\\.\\d{1,})?$/",
+    "pattern": "/^\\d{0,2}(\\.\\d{1,})?$/",
     "required": true,
     "description": "SliceThickness must match /^\\d{0,2}(\\.\\d{1,})?$/. Example: 2 or 2.5433"
   },
@@ -175,13 +175,13 @@
   },
     "EchoTime": {
     "type": "number",
-    "regex": "/^\\d{0,4}(\\.\\d{1,})?$/",
+    "pattern": "/^\\d{0,4}(\\.\\d{1,})?$/",
     "required": true,
     "description": "InversionTime must match /^\\d{0,4}(\\.\\d{1,})?$/. Example: 75 or 34.2"
   },
     "RepetitionTime": {
     "type": "number",
-    "regex": "/^\\d{0,4}(\\.\\d{1,})?$/",
+    "pattern": "/^\\d{0,4}(\\.\\d{1,})?$/",
     "required": true,
     "description": "RepetitionTime must match /^\\d{0,4}(\\.\\d{1,})?$/. Example: 4 or 4.2"
   },
@@ -307,25 +307,25 @@
   },
     "ClinicalTrialTimePointID": {
     "type": "string",
-    "regex": "/^\\d{1,}(\\.\\d{1,})+?$/",
+    "pattern": "/^\\d{1,}(\\.\\d{1,})+?$/",
     "required": true,
     "description": "ClinicalTrialTimePointID is an optional field. Example. 11.1.2014"
   },
     "ClinicalTrialTimePointDescription": {
     "type": "string",
-    "regex": "/[A-Za-z0-9-_.,!\"'/$]*/",
+    "pattern": "/[A-Za-z0-9-_.,!\"'/$]*/",
     "required": true,
     "description": "ClinicalTrialTimePointDescription is required and can be any string. Example. This is clinical trial is for drug Rx"
   },
   "PixelSpacing": {
     "type": "number",
-    "regex": "/^\\d{0,2}(\\.\\d{1,})?$/",
+    "pattern": "/^\\d{0,2}(\\.\\d{1,})?$/",
     "required": true,
     "description": "PixelSpacing must match /^\\d{0,2}(\\.\\d{1,})?$/. Example: 2 or 2.5433"
   },
   "InversionTime": {
     "type": "number",
-    "regex": "/^\\d{0,4}(\\.\\d{1,})?$/",
+    "pattern": "/^\\d{0,4}(\\.\\d{1,})?$/",
     "required": true,
     "description": "InversionTime must match /^\\d{0,4}(\\.\\d{1,})?$/. Example: 2 or 2.5433"
   }
