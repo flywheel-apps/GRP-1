@@ -2,3 +2,6 @@
 .DS_Store
 *.xml
 *.iml
+Notebooks/validation_errors.JSON
+Notebooks/error.log.json
+Notebooks/revised.mr.metadata.template.json
