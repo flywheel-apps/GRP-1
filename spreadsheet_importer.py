@@ -55,7 +55,7 @@ def convert_value(value):
         # convert to string
         value = str(value)
         # clip trailing .0
-        value = re.sub('\.0+$', '',value)
+        value = re.sub('\\.0+$', '',value)
         return value
 
 
@@ -103,35 +103,36 @@ def export_to_dict(dataframe):
         return output_dict
 
 
-# Gear basics
-input_folder = '/flywheel/v0/input/file/'
-output_folder = '/flywheel/v0/output/'
+if __name__ == '__main__':
+    # Gear basics
+    input_folder = '/flywheel/v0/input/file/'
+    output_folder = '/flywheel/v0/output/'
 
-# Declare the output path
-output_filepath = os.path.join(output_folder, '.metadata.json')
+    # Declare the output path
+    output_filepath = os.path.join(output_folder, '.metadata.json')
 
-# declare config file path
-config_file_path = '/flywheel/v0/config.json'
+    # declare config file path
+    config_file_path = '/flywheel/v0/config.json'
 
-with open(config_file_path) as config_data:
-    config = json.load(config_data)
+    with open(config_file_path) as config_data:
+        config = json.load(config_data)
 
-meta_filepath = config['inputs']['spreadsheet-file']['location']['path']
-file_name = config['inputs']['spreadsheet-file']['location']['name']
+    meta_filepath = config['inputs']['spreadsheet-file']['location']['path']
+    file_name = config['inputs']['spreadsheet-file']['location']['name']
 
-hierarchy_level = config['inputs']['spreadsheet-file']['hierarchy']['type']
+    hierarchy_level = config['inputs']['spreadsheet-file']['hierarchy']['type']
 
-# prepare object for .metadata.json file
-metadata_json_out = {
-    hierarchy_level: {
+    # prepare object for .metadata.json file
+    metadata_json_out = {
+        hierarchy_level: {
+        }
     }
-}
 
 
-meta_dataframe = import_file(meta_filepath)
-meta_obj = export_to_dict(meta_dataframe)
+    meta_dataframe = import_file(meta_filepath)
+    meta_obj = export_to_dict(meta_dataframe)
 
-metadata_json_out[hierarchy_level]['info'] = meta_obj
+    metadata_json_out[hierarchy_level]['info'] = meta_obj
 
-with open(output_filepath, 'w') as outfile:
-    json.dump(metadata_json_out, outfile, separators=(', ', ': '), sort_keys=True, indent=4)
+    with open(output_filepath, 'w') as outfile:
+        json.dump(metadata_json_out, outfile, separators=(', ', ': '), sort_keys=True, indent=4)

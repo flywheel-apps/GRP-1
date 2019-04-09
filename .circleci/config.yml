@@ -36,9 +36,18 @@ jobs:
             mv /tmp/docker/* /usr/bin
 
       - run:
+          name: PIP install
+          command: pip install --user -r requirements.txt -r tests/requirements.txt
+
+      - run:
+          name: run tests
+          command: |
+            ./tests/bin/tests.sh
+
+      - run:
           name: build docker image
           command: |
-            docker build -t grp-1 .
+            docker build -t grp-1 --target base .
 
       - deploy:
           name: Deploy Docker Image
