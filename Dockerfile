@@ -11,7 +11,7 @@ RUN pip install pandas flywheel-sdk requests xlrd
 WORKDIR /flywheel/v0
 
 # Copy executables into place
-COPY spreadheet_importer.py ./run
+COPY spreadsheet_importer.py ./run
 COPY manifest.json  .
 RUN chmod +x run manifest.json
 
