@@ -86,7 +86,7 @@ def export_to_dict(dataframe):
     return output_dict
 
 
-def validate_against_template(input_dict, template):
+def validate_against_template(input_dict, template, index):
     """
     This is a function for validating a dictionary against a template. Given
     an input_dict and a template object, it will create a JSON schema validator
@@ -96,6 +96,7 @@ def validate_against_template(input_dict, template):
 
     :param input_dict: a dictionary of representing a row of a spreadsheet to be validated
     :param template: a template dictionary to validate against
+    :param index: an index for the row
     :return: validation_errors, an object containing information on validation errors
     """
     # Initialize json schema validator
@@ -104,7 +105,9 @@ def validate_against_template(input_dict, template):
     validation_errors = []
     for error in sorted(validator.iter_errors(input_dict), key=str):
         # Create a temporary dictionary for the individual error
-        tmp_dict = {}
+        tmp_dict = dict()
+        # add row number to the dictionary
+        tmp_dict['row'] = row
         # Get error type
         tmp_dict['error_type'] = error.validator
         # Get error message and log it
@@ -130,6 +133,7 @@ def validate_against_template(input_dict, template):
             pass
         # revalidate key so that validation errors can be revalidated in the future
         tmp_dict['revalidate'] = False
+
         # Append individual error object to the return validation_errors object
         validation_errors.append(tmp_dict)
 
@@ -171,17 +175,17 @@ if __name__ == '__main__':
             import_template = json.load(template_data)
         template.update(import_template)
     json_template = template.copy()
-    print(json_template)
     # Validate header data against json schema template
     error_file_name = file_name + '.error.log.json'
     error_filepath = os.path.join(output_folder, error_file_name)
-    validation_errors = {}
+    validation_errors = []
     for index in input_dict:
-        errors = validate_against_template(input_dict[index], json_template)
-        if errors:
-            key = "Row {}".format(index + 1)
-            validation_errors[key] = errors
-    print(validation_errors)
+        # Assuming headers, the row index should be 1
+        row = index + 1
+        # Validate row against template
+        row_errors = validate_against_template(input_dict[index], json_template, row)
+        if row_errors:
+            validation_errors = validation_errors + row_errors
     if validation_errors:
         with open(error_filepath, 'w') as outfile:
-            json.dump(validation_errors, outfile, separators=(', ', ': '), sort_keys=True, indent=4)
+            json.dump(validation_errors, outfile, separators=(', ', ': '), indent=4)
