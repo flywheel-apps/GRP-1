@@ -1,12 +1,12 @@
 {
-	"name": "spreadsheet-importer",
-	"label": "Spreadsheet Importer",
-	"description": "This gear takes a spreadsheet and appends it to the container metadata",
-	"version": "0",
+	"name": "metadata-validation-tabular",
+	"label": "Metadata Validation: Tabular Data",
+	"description": "Metadata validation for csv data. Will validate columns fields of each row in a csv based on a given json template that is required. An error file will be generated in the container of the file if the csv file is not valid.",
+	"version": "0.1.0",
 	"inputs": {
 		"spreadsheet-file": {
 			"base": "file",
-			"description": "A spreadsheet to be appended to the metadata",
+			"description": "A spreadsheet to be validated.",
 			"type": {
 				"enum": [
 					"tabular data"
@@ -15,7 +15,7 @@
 		},
 		"json-template": {
 			"base": "file",
-			"description": "A JSON template to validate DICOM data",
+			"description": "A JSON template to validate csv data",
 			"optional": false,
 			"type": {
 				"enum": [
@@ -43,6 +43,9 @@
 		"gear-builder": {
 			"category": "converter",
 			"image": "flywheel/metadata-import-grp-1"
+		},
+		"flywheel": {
+			"suite": "Metadata Import and Validation"
 		}
 	}
 }
