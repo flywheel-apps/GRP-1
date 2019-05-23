@@ -1,5 +1,5 @@
 import pytest
-import spreadsheet_importer as si
+import run as si
 
 def test_convert_value_str():
     assert isinstance(si.convert_value('Test String'), str)

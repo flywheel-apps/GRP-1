@@ -14,7 +14,7 @@ RUN pip install -r ./requirements.txt
 WORKDIR /flywheel/v0
 
 # Copy executables into place
-COPY spreadsheet_importer.py ./run.py
+COPY run.py ./run.py
 
 # Add a default command
 CMD ["python run.py"]

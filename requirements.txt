@@ -2,3 +2,4 @@ pandas
 flywheel-sdk
 requests
 xlrd
+jsonschema
