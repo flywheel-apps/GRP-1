@@ -42,7 +42,7 @@
 	"custom": {
 		"gear-builder": {
 			"category": "converter",
-			"image": "flywheel/metadata-import-grp-1"
+			"image": "flywheel/metadata-import-grp-1:0.1.0"
 		},
 		"flywheel": {
 			"suite": "Metadata Import and Validation"
