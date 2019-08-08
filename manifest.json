@@ -33,16 +33,16 @@
 		"PYTHON_VERSION": "3.7.2"
 	},
 	"command": "python run.py",
-	"author": "Kaleb Fischer",
-	"maintainer": "Kaleb Fischer",
-	"cite": "List citations here.",
+	"author": "Flywheel",
+	"maintainer": "Flywheel <support@flywheel.io>",
+	"cite": "",
 	"license": "Other",
-	"source": "",
-	"url": "",
+	"source": "https://github.com/flywheel-apps/GRP-1/releases/tag/0.1.1",
+	"url": "https://github.com/flywheel-apps/GRP-1",
 	"custom": {
 		"gear-builder": {
 			"category": "converter",
-			"image": "flywheel/metadata-import-grp-1:0.1.0"
+			"image": "flywheel/metadata-validation-tabular:0.1.1"
 		},
 		"flywheel": {
 			"suite": "Metadata Import and Validation"
